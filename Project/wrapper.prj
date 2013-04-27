@@ -1,0 +1,8 @@
+vhdl work "try1.vhd"
+vhdl work "list6_uart_tx.vhd"
+vhdl work "list4_uart_rx.vhd"
+vhdl work "list2_fifo.vhd"
+vhdl work "list1_mod_m.vhd"
+vhdl work "list7_uart.vhd"
+vhdl work "debounce_modified.vhd"
+vhdl work "wrapper.vhd"

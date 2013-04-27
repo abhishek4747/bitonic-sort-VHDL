@@ -1,0 +1,37 @@
+Release 9.2i - xst J.36
+Copyright (c) 1995-2007 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to ./xst/projnav.tmp
+CPU : 0.00 / 0.20 s | Elapsed : 0.00 / 0.00 s
+ 
+--> 
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "//vboxsvr/rojec/try1/list1_mod_m.vhd" in Library work.
+Architecture arch of Entity mod_m_counter is up to date.
+Compiling vhdl file "//vboxsvr/rojec/try1/list4_uart_rx.vhd" in Library work.
+Architecture arch of Entity uart_rx is up to date.
+Compiling vhdl file "//vboxsvr/rojec/try1/list2_fifo.vhd" in Library work.
+Architecture arch of Entity fifo is up to date.
+Compiling vhdl file "//vboxsvr/rojec/try1/list6_uart_tx.vhd" in Library work.
+Architecture arch of Entity uart_tx is up to date.
+Compiling vhdl file "//vboxsvr/rojec/try1/list7_uart.vhd" in Library work.
+Architecture str_arch of Entity uart is up to date.
+Compiling vhdl file "//vboxsvr/rojec/try1/list3_debounce.vhd" in Library work.
+Architecture exp_fsmd_arch of Entity debounce is up to date.
+Architecture fsmd_arch of Entity debounce is up to date.
+Compiling vhdl file "//vboxsvr/rojec/try1/uart_test1.vhd" in Library work.
+ERROR:HDLParsers:3312 - "//vboxsvr/rojec/try1/uart_test1.vhd" Line 31. Undefined symbol 'led'.
+ERROR:HDLParsers:1209 - "//vboxsvr/rojec/try1/uart_test1.vhd" Line 31. led: Undefined symbol (last report in this block)
+ERROR:HDLParsers:507 - "//vboxsvr/rojec/try1/uart_test1.vhd" Line 30. std_logic is not a correct resolution function name
+ERROR:HDLParsers:164 - "//vboxsvr/rojec/try1/uart_test1.vhd" Line 31. parse error, unexpected COLON, expecting SEMICOLON or CLOSEPAR
+CPU : 0.50 / 0.70 s | Elapsed : 1.00 / 1.00 s
+ 
+--> 
+
+Total memory usage is 113688 kilobytes
+
+Number of errors   :    4 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

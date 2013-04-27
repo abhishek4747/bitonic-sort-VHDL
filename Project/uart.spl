@@ -1,0 +1,13 @@
+[Inputs]
+clk
+reset
+rd_uart
+wr_uart
+rx
+=w_data[7:0]=
+[Outputs]
+tx_full
+rx_empty
+tx
+=r_data[7:0]=
+[BiDir]

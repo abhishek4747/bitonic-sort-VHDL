@@ -1,0 +1,5 @@
+work	list1_mod_m.vhd
+work	list2_fifo.vhd
+work	list4_uart_rx.vhd
+work	list6_uart_tx.vhd
+work	list7_uart.vhd

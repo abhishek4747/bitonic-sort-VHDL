@@ -1,0 +1,944 @@
+Release 9.2i - xst J.36
+Copyright (c) 1995-2007 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to ./xst/projnav.tmp
+CPU : 0.00 / 0.25 s | Elapsed : 0.00 / 0.00 s
+ 
+--> Parameter xsthdpdir set to ./xst
+CPU : 0.00 / 0.25 s | Elapsed : 0.00 / 0.00 s
+ 
+--> Reading design: wrapper.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+     9.1) Device utilization summary
+     9.2) Partition Resource Summary
+     9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "wrapper.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "wrapper"
+Output Format                      : NGC
+Target Device                      : xc2vp30-6-ff896
+
+---- Source Options
+Top Module Name                    : wrapper
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : lut
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : YES
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : YES
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 500
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Convert Tristates To Logic         : Yes
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Library Search Order               : wrapper.lso
+Keep Hierarchy                     : NO
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "//vboxsrv/rojec/Project/list1_mod_m.vhd" in Library work.
+Architecture arch of Entity mod_m_counter is up to date.
+Compiling vhdl file "//vboxsrv/rojec/Project/list4_uart_rx.vhd" in Library work.
+Architecture arch of Entity uart_rx is up to date.
+Compiling vhdl file "//vboxsrv/rojec/Project/list2_fifo.vhd" in Library work.
+Architecture arch of Entity fifo is up to date.
+Compiling vhdl file "//vboxsrv/rojec/Project/list6_uart_tx.vhd" in Library work.
+Architecture arch of Entity uart_tx is up to date.
+Compiling vhdl file "//vboxsrv/rojec/Project/list7_uart.vhd" in Library work.
+Entity <uart> compiled.
+Entity <uart> (Architecture <str_arch>) compiled.
+Compiling vhdl file "//vboxsrv/rojec/Project/debounce_modified.vhd" in Library work.
+Architecture fsmd_arch_rep of Entity debounce_modified is up to date.
+Compiling vhdl file "//vboxsrv/rojec/Project/try1.vhd" in Library work.
+Architecture behavioral of Entity bitonic_sort is up to date.
+Compiling vhdl file "//vboxsrv/rojec/Project/wrapper.vhd" in Library work.
+Architecture arch of Entity wrapper is up to date.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <wrapper> in library <work> (architecture <arch>).
+
+Analyzing hierarchy for entity <uart> in library <work> (architecture <str_arch>) with generics.
+	DBIT = 8
+	DVSR = 163
+	DVSR_BIT = 8
+	FIFO_W = 7
+	SB_TICK = 16
+
+Analyzing hierarchy for entity <debounce_modified> in library <work> (architecture <fsmd_arch_rep>).
+
+Analyzing hierarchy for entity <bitonic_sort> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <mod_m_counter> in library <work> (architecture <arch>) with generics.
+	M = 163
+	N = 8
+
+Analyzing hierarchy for entity <uart_rx> in library <work> (architecture <arch>) with generics.
+	DBIT = 8
+	SB_TICK = 16
+
+Analyzing hierarchy for entity <fifo> in library <work> (architecture <arch>) with generics.
+	B = 8
+	W = 7
+
+Analyzing hierarchy for entity <uart_tx> in library <work> (architecture <arch>) with generics.
+	DBIT = 8
+	SB_TICK = 16
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <wrapper> in library <work> (Architecture <arch>).
+WARNING:Xst:753 - "//vboxsrv/rojec/Project/wrapper.vhd" line 86: Unconnected output port 'db_level' of component 'debounce_modified'.
+WARNING:Xst:1610 - "//vboxsrv/rojec/Project/wrapper.vhd" line 105: Width mismatch. <nums> has a width of 512 bits but assigned expression is 16-bit wide.
+INFO:Xst:1432 - Contents of array <nums> may be accessed with a negative index, causing simulation mismatch.
+INFO:Xst:1433 - Contents of array <nums> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
+Entity <wrapper> analyzed. Unit <wrapper> generated.
+
+Analyzing generic Entity <uart> in library <work> (Architecture <str_arch>).
+	DBIT = 8
+	DVSR = 163
+	DVSR_BIT = 8
+	FIFO_W = 7
+	SB_TICK = 16
+WARNING:Xst:753 - "//vboxsrv/rojec/Project/list7_uart.vhd" line 37: Unconnected output port 'q' of component 'mod_m_counter'.
+WARNING:Xst:753 - "//vboxsrv/rojec/Project/list7_uart.vhd" line 46: Unconnected output port 'full' of component 'fifo'.
+Entity <uart> analyzed. Unit <uart> generated.
+
+Analyzing generic Entity <mod_m_counter> in library <work> (Architecture <arch>).
+	M = 163
+	N = 8
+Entity <mod_m_counter> analyzed. Unit <mod_m_counter> generated.
+
+Analyzing generic Entity <uart_rx> in library <work> (Architecture <arch>).
+	DBIT = 8
+	SB_TICK = 16
+Entity <uart_rx> analyzed. Unit <uart_rx> generated.
+
+Analyzing generic Entity <fifo> in library <work> (Architecture <arch>).
+	B = 8
+	W = 7
+Entity <fifo> analyzed. Unit <fifo> generated.
+
+Analyzing generic Entity <uart_tx> in library <work> (Architecture <arch>).
+	DBIT = 8
+	SB_TICK = 16
+Entity <uart_tx> analyzed. Unit <uart_tx> generated.
+
+Analyzing Entity <debounce_modified> in library <work> (Architecture <fsmd_arch_rep>).
+INFO:Xst:2679 - Register <db_level> in unit <debounce_modified> has a constant value of 0 during circuit operation. The register is replaced by logic.
+Entity <debounce_modified> analyzed. Unit <debounce_modified> generated.
+
+Analyzing Entity <bitonic_sort> in library <work> (Architecture <behavioral>).
+Entity <bitonic_sort> analyzed. Unit <bitonic_sort> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <debounce_modified>.
+    Related source file is "//vboxsrv/rojec/Project/debounce_modified.vhd".
+    Found finite state machine <FSM_0> for signal <state_reg>.
+    -----------------------------------------------------------------------
+    | States             | 3                                              |
+    | Transitions        | 7                                              |
+    | Inputs             | 2                                              |
+    | Outputs            | 3                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | reset (positive)                               |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | zero                                           |
+    | Power Up State     | zero                                           |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+WARNING:Xst:2734 - Property "use_dsp48" is not applicable for this technology.
+    Found 14-bit subtractor for signal <q_next$addsub0000> created at line 45.
+    Found 14-bit register for signal <q_reg>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred  14 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+Unit <debounce_modified> synthesized.
+
+
+Synthesizing Unit <bitonic_sort>.
+    Related source file is "//vboxsrv/rojec/Project/try1.vhd".
+    Found 32-bit comparator lessequal for signal <inputf36_0$cmp_le0000> created at line 33.
+    Found 32-bit comparator lessequal for signal <inputf36_1$cmp_le0000> created at line 33.
+    Found 32-bit comparator lessequal for signal <inputf6_1$cmp_le0000> created at line 33.
+    Found 32-bit comparator greater for signal <inputf70_13$cmp_gt0000> created at line 33.
+    Found 32-bit comparator greater for signal <inputf77_10$cmp_gt0000> created at line 33.
+    Found 32-bit comparator greater for signal <inputf77_11$cmp_gt0000> created at line 33.
+    Found 32-bit comparator greater for signal <inputf77_8$cmp_gt0000> created at line 33.
+    Found 32-bit comparator greater for signal <inputf77_9$cmp_gt0000> created at line 33.
+    Found 32-bit comparator greater for signal <inputf78_8$cmp_gt0000> created at line 33.
+    Found 32-bit comparator greater for signal <inputf78_9$cmp_gt0000> created at line 33.
+    Found 32-bit comparator lessequal for signal <inputf92_0$cmp_le0000> created at line 33.
+    Found 32-bit comparator lessequal for signal <inputf92_2$cmp_le0000> created at line 33.
+    Found 32-bit comparator lessequal for signal <inputf92_3$cmp_le0000> created at line 33.
+    Found 32-bit comparator lessequal for signal <inputf92_4$cmp_le0000> created at line 33.
+    Found 32-bit comparator lessequal for signal <inputf92_5$cmp_le0000> created at line 33.
+    Found 32-bit comparator lessequal for signal <inputf92_6$cmp_le0000> created at line 33.
+    Found 32-bit comparator lessequal for signal <inputf92_7$cmp_le0000> created at line 33.
+    Found 32-bit comparator lessequal for signal <n0002_0$cmp_le0000> created at line 33.
+    Found 32-bit comparator greater for signal <n0008_2$cmp_gt0000> created at line 33.
+    Found 32-bit comparator lessequal for signal <n0012_0$cmp_le0000> created at line 33.
+    Found 32-bit comparator lessequal for signal <n0012_2$cmp_le0000> created at line 33.
+    Found 32-bit comparator lessequal for signal <n0015_2$cmp_le0000> created at line 33.
+    Found 32-bit comparator lessequal for signal <n0022_4$cmp_le0000> created at line 33.
+    Found 32-bit comparator greater for signal <n0028_6$cmp_gt0000> created at line 33.
+    Found 32-bit comparator greater for signal <n0032_4$cmp_gt0000> created at line 33.
+    Found 32-bit comparator greater for signal <n0032_6$cmp_gt0000> created at line 33.
+    Found 32-bit comparator greater for signal <n0032_7$cmp_gt0000> created at line 33.
+    Found 32-bit comparator greater for signal <n0035_6$cmp_gt0000> created at line 33.
+    Found 32-bit comparator lessequal for signal <n0040_0$cmp_le0000> created at line 33.
+    Found 32-bit comparator lessequal for signal <n0040_2$cmp_le0000> created at line 33.
+    Found 32-bit comparator lessequal for signal <n0040_3$cmp_le0000> created at line 33.
+    Found 32-bit comparator lessequal for signal <n0040_6$cmp_le0000> created at line 33.
+    Found 32-bit comparator lessequal for signal <n0040_7$cmp_le0000> created at line 33.
+    Found 32-bit comparator lessequal for signal <n0043_2$cmp_le0000> created at line 33.
+    Found 32-bit comparator lessequal for signal <n0047_4$cmp_le0000> created at line 33.
+    Found 32-bit comparator lessequal for signal <n0047_6$cmp_le0000> created at line 33.
+    Found 32-bit comparator lessequal for signal <n0047_7$cmp_le0000> created at line 33.
+    Found 32-bit comparator lessequal for signal <n0050_6$cmp_le0000> created at line 33.
+    Found 32-bit comparator lessequal for signal <n0058_8$cmp_le0000> created at line 33.
+    Found 32-bit comparator greater for signal <n0064_10$cmp_gt0000> created at line 33.
+    Found 32-bit comparator lessequal for signal <n0068_10$cmp_le0000> created at line 33.
+    Found 32-bit comparator lessequal for signal <n0068_11$cmp_le0000> created at line 33.
+    Found 32-bit comparator lessequal for signal <n0068_8$cmp_le0000> created at line 33.
+    Found 32-bit comparator lessequal for signal <n0071_10$cmp_le0000> created at line 33.
+    Found 32-bit comparator lessequal for signal <n0078_12$cmp_le0000> created at line 33.
+    Found 32-bit comparator greater for signal <n0084_14$cmp_gt0000> created at line 33.
+    Found 32-bit comparator greater for signal <n0088_12$cmp_gt0000> created at line 33.
+    Found 32-bit comparator greater for signal <n0088_14$cmp_gt0000> created at line 33.
+    Found 32-bit comparator greater for signal <n0091_14$cmp_gt0000> created at line 33.
+    Found 32-bit comparator greater for signal <n0096_8$cmp_gt0000> created at line 33.
+    Found 32-bit comparator greater for signal <n0099_10$cmp_gt0000> created at line 33.
+    Found 32-bit comparator greater for signal <n0103_12$cmp_gt0000> created at line 33.
+    Found 32-bit comparator greater for signal <n0103_14$cmp_gt0000> created at line 33.
+    Found 32-bit comparator greater for signal <n0103_15$cmp_gt0000> created at line 33.
+    Found 32-bit comparator greater for signal <n0106_14$cmp_gt0000> created at line 33.
+    Found 32-bit comparator lessequal for signal <n0112_0$cmp_le0000> created at line 33.
+    Found 32-bit comparator lessequal for signal <n0112_2$cmp_le0000> created at line 33.
+    Found 32-bit comparator lessequal for signal <n0112_3$cmp_le0000> created at line 33.
+    Found 32-bit comparator lessequal for signal <n0112_4$cmp_le0000> created at line 33.
+    Found 32-bit comparator lessequal for signal <n0112_5$cmp_le0000> created at line 33.
+    Found 32-bit comparator lessequal for signal <n0112_6$cmp_le0000> created at line 33.
+    Found 32-bit comparator lessequal for signal <n0112_7$cmp_le0000> created at line 33.
+    Found 32-bit comparator lessequal for signal <n0112_9$cmp_le0000> created at line 33.
+    Found 32-bit comparator lessequal for signal <n0115_2$cmp_le0000> created at line 33.
+    Found 32-bit comparator lessequal for signal <n0119_4$cmp_le0000> created at line 33.
+    Found 32-bit comparator lessequal for signal <n0119_6$cmp_le0000> created at line 33.
+    Found 32-bit comparator lessequal for signal <n0119_7$cmp_le0000> created at line 33.
+    Found 32-bit comparator lessequal for signal <n0122_6$cmp_le0000> created at line 33.
+    Found 32-bit comparator lessequal for signal <n0127_10$cmp_le0000> created at line 33.
+    Found 32-bit comparator lessequal for signal <n0127_11$cmp_le0000> created at line 33.
+    Found 32-bit comparator lessequal for signal <n0127_12$cmp_le0000> created at line 33.
+    Found 32-bit comparator lessequal for signal <n0127_13$cmp_le0000> created at line 33.
+    Found 32-bit comparator lessequal for signal <n0127_14$cmp_le0000> created at line 33.
+    Found 32-bit comparator lessequal for signal <n0127_15$cmp_le0000> created at line 33.
+    Found 32-bit comparator lessequal for signal <n0127_8$cmp_le0000> created at line 33.
+    Found 32-bit comparator lessequal for signal <n0130_10$cmp_le0000> created at line 33.
+    Found 32-bit comparator lessequal for signal <n0134_12$cmp_le0000> created at line 33.
+    Found 32-bit comparator lessequal for signal <n0134_14$cmp_le0000> created at line 33.
+    Found 32-bit comparator lessequal for signal <n0134_15$cmp_le0000> created at line 33.
+    Found 32-bit comparator lessequal for signal <n0137_14$cmp_le0000> created at line 33.
+    Summary:
+	inferred  80 Comparator(s).
+Unit <bitonic_sort> synthesized.
+
+
+Synthesizing Unit <mod_m_counter>.
+    Related source file is "//vboxsrv/rojec/Project/list1_mod_m.vhd".
+WARNING:Xst:2734 - Property "use_dsp48" is not applicable for this technology.
+    Found 8-bit adder for signal <r_next$addsub0000> created at line 31.
+    Found 8-bit register for signal <r_reg>.
+    Summary:
+	inferred   8 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+Unit <mod_m_counter> synthesized.
+
+
+Synthesizing Unit <uart_rx>.
+    Related source file is "//vboxsrv/rojec/Project/list4_uart_rx.vhd".
+    Found finite state machine <FSM_1> for signal <state_reg>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 12                                             |
+    | Inputs             | 5                                              |
+    | Outputs            | 5                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | reset (positive)                               |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | idle                                           |
+    | Power Up State     | idle                                           |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+WARNING:Xst:2734 - Property "use_dsp48" is not applicable for this technology.
+WARNING:Xst:2734 - Property "use_dsp48" is not applicable for this technology.
+    Found 8-bit register for signal <b_reg>.
+    Found 3-bit register for signal <n_reg>.
+    Found 3-bit adder for signal <n_reg$addsub0000> created at line 73.
+    Found 4-bit register for signal <s_reg>.
+    Found 4-bit adder for signal <s_reg$share0000> created at line 49.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred  15 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+Unit <uart_rx> synthesized.
+
+
+Synthesizing Unit <fifo>.
+    Related source file is "//vboxsrv/rojec/Project/list2_fifo.vhd".
+WARNING:Xst:2734 - Property "use_dsp48" is not applicable for this technology.
+    Found 8-bit 128-to-1 multiplexer for signal <r_data>.
+    Found 1024-bit register for signal <array_reg>.
+    Found 1-bit register for signal <empty_reg>.
+    Found 7-bit comparator equal for signal <empty_reg$cmp_eq0000> created at line 89.
+    Found 1-bit 4-to-1 multiplexer for signal <empty_reg$mux0000> created at line 83.
+    Found 1-bit register for signal <full_reg>.
+    Found 7-bit comparator equal for signal <full_reg$cmp_eq0000> created at line 97.
+    Found 1-bit 4-to-1 multiplexer for signal <full_reg$mux0000> created at line 83.
+    Found 7-bit register for signal <r_ptr_reg>.
+    Found 7-bit 4-to-1 multiplexer for signal <r_ptr_reg$mux0000> created at line 83.
+    Found 7-bit adder for signal <r_ptr_succ$add0000> created at line 72.
+    Found 7-bit register for signal <w_ptr_reg>.
+    Found 7-bit 4-to-1 multiplexer for signal <w_ptr_reg$mux0000> created at line 83.
+    Found 7-bit adder for signal <w_ptr_succ$add0000> created at line 71.
+INFO:Xst:738 - HDL ADVISOR - 1024 flip-flops were inferred for signal <array_reg>. You may be trying to describe a RAM in a way that is incompatible with block and distributed RAM resources available on Xilinx devices, or with a specific template that is not supported. Please review the Xilinx resources documentation and the XST user manual for coding guidelines. Taking advantage of RAM resources will lead to improved device usage and reduced synthesis time.
+    Summary:
+	inferred 1040 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred   2 Comparator(s).
+	inferred  24 Multiplexer(s).
+Unit <fifo> synthesized.
+
+
+Synthesizing Unit <uart_tx>.
+    Related source file is "//vboxsrv/rojec/Project/list6_uart_tx.vhd".
+    Found finite state machine <FSM_2> for signal <state_reg>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 12                                             |
+    | Inputs             | 4                                              |
+    | Outputs            | 4                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | reset (positive)                               |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | idle                                           |
+    | Power Up State     | idle                                           |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 8-bit register for signal <b_reg>.
+    Found 3-bit register for signal <n_reg>.
+    Found 3-bit adder for signal <n_reg$addsub0000> created at line 83.
+    Found 4-bit adder for signal <s_next$add0000> created at line 71.
+    Found 4-bit register for signal <s_reg>.
+    Found 1-bit register for signal <tx_reg>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred  16 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+Unit <uart_tx> synthesized.
+
+
+Synthesizing Unit <uart>.
+    Related source file is "//vboxsrv/rojec/Project/list7_uart.vhd".
+Unit <uart> synthesized.
+
+
+Synthesizing Unit <wrapper>.
+    Related source file is "//vboxsrv/rojec/Project/wrapper.vhd".
+WARNING:Xst:646 - Signal <tx_full> is assigned but never used.
+    Using one-hot encoding for signal <outState>.
+WARNING:Xst:2734 - Property "use_dsp48" is not applicable for this technology.
+WARNING:Xst:2734 - Property "use_dsp48" is not applicable for this technology.
+WARNING:Xst:2734 - Property "use_dsp48" is not applicable for this technology.
+    Found 1-bit register for signal <led<1>>.
+    Found 32-bit register for signal <c>.
+    Found 32-bit adder for signal <c$addsub0000> created at line 177.
+    Found 32-bit register for signal <current>.
+    Found 32-bit register for signal <i>.
+    Found 32-bit comparator greater for signal <i$cmp_gt0000> created at line 111.
+    Found 32-bit up counter for signal <itr>.
+    Found 32-bit up counter for signal <n>.
+    Found 4-bit register for signal <nextState>.
+    Found 32-bit adder for signal <nextState$addsub0000> created at line 182.
+    Found 32-bit comparator greatequal for signal <nextState$cmp_ge0000> created at line 186.
+    Found 512-bit register for signal <nums>.
+    Found 32-bit adder for signal <nums_10$add0000> created at line 110.
+    Found 32-bit comparator lessequal for signal <nums_10$cmp_le0000> created at line 111.
+    Found 4-bit register for signal <outState>.
+    Found 1-bit register for signal <reading>.
+    Found 8-bit register for signal <send_data>.
+    Found 32-bit comparator greater for signal <send_data$cmp_gt0000> created at line 172.
+    Found 1-bit register for signal <started>.
+    Found 32-bit register for signal <tmp>.
+    Found 1-bit register for signal <tx_en>.
+INFO:Xst:738 - HDL ADVISOR - 512 flip-flops were inferred for signal <nums>. You may be trying to describe a RAM in a way that is incompatible with block and distributed RAM resources available on Xilinx devices, or with a specific template that is not supported. Please review the Xilinx resources documentation and the XST user manual for coding guidelines. Taking advantage of RAM resources will lead to improved device usage and reduced synthesis time.
+    Summary:
+	inferred   2 Counter(s).
+	inferred 620 D-type flip-flop(s).
+	inferred   3 Adder/Subtractor(s).
+	inferred   4 Comparator(s).
+Unit <wrapper> synthesized.
+
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 13
+ 14-bit subtractor                                     : 1
+ 3-bit adder                                           : 2
+ 32-bit adder                                          : 3
+ 4-bit adder                                           : 2
+ 7-bit adder                                           : 4
+ 8-bit adder                                           : 1
+# Counters                                             : 2
+ 32-bit up counter                                     : 2
+# Registers                                            : 331
+ 1-bit register                                        : 41
+ 14-bit register                                       : 1
+ 3-bit register                                        : 2
+ 32-bit register                                       : 19
+ 4-bit register                                        : 4
+ 7-bit register                                        : 4
+ 8-bit register                                        : 260
+# Comparators                                          : 88
+ 32-bit comparator greatequal                          : 1
+ 32-bit comparator greater                             : 26
+ 32-bit comparator lessequal                           : 57
+ 7-bit comparator equal                                : 4
+# Multiplexers                                         : 10
+ 1-bit 4-to-1 multiplexer                              : 4
+ 7-bit 4-to-1 multiplexer                              : 4
+ 8-bit 128-to-1 multiplexer                            : 2
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_2> for best encoding.
+Optimizing FSM <uart_unit/uart_tx_unit/state_reg> on signal <state_reg[1:2]> with sequential encoding.
+-------------------
+ State | Encoding
+-------------------
+ idle  | 00
+ start | 01
+ data  | 10
+ stop  | 11
+-------------------
+Analyzing FSM <FSM_1> for best encoding.
+Optimizing FSM <uart_unit/uart_rx_unit/state_reg> on signal <state_reg[1:2]> with sequential encoding.
+-------------------
+ State | Encoding
+-------------------
+ idle  | 00
+ start | 01
+ data  | 10
+ stop  | 11
+-------------------
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <rx_db_unit/state_reg> on signal <state_reg[1:2]> with gray encoding.
+-------------------
+ State | Encoding
+-------------------
+ zero  | 00
+ wait1 | 01
+ stay  | 11
+-------------------
+Loading device for application Rf_Device from file '2vp30.nph' in environment C:\Xilinx92i.
+WARNING:Xst:1293 - FF/Latch  <3> has a constant value of 0 in block <nextState>.
+WARNING:Xst:2677 - Node <2> of sequential type is unconnected in block <nextState>.
+WARNING:Xst:2677 - Node <2> of sequential type is unconnected in block <outState>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 3
+# Adders/Subtractors                                   : 13
+ 14-bit subtractor                                     : 1
+ 3-bit adder                                           : 2
+ 32-bit adder                                          : 3
+ 4-bit adder                                           : 2
+ 7-bit adder                                           : 4
+ 8-bit adder                                           : 1
+# Counters                                             : 2
+ 32-bit up counter                                     : 2
+# Registers                                            : 2799
+ Flip-Flops                                            : 2799
+# Comparators                                          : 88
+ 32-bit comparator greatequal                          : 1
+ 32-bit comparator greater                             : 26
+ 32-bit comparator lessequal                           : 57
+ 7-bit comparator equal                                : 4
+# Multiplexers                                         : 10
+ 1-bit 4-to-1 multiplexer                              : 4
+ 7-bit 4-to-1 multiplexer                              : 4
+ 8-bit 128-to-1 multiplexer                            : 2
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1293 - FF/Latch  <nextState_3> has a constant value of 0 in block <wrapper>.
+WARNING:Xst:2677 - Node <outState_2> of sequential type is unconnected in block <wrapper>.
+WARNING:Xst:2677 - Node <nextState_2> of sequential type is unconnected in block <wrapper>.
+WARNING:Xst:1293 - FF/Latch  <i_0> has a constant value of 0 in block <wrapper>.
+WARNING:Xst:1293 - FF/Latch  <i_1> has a constant value of 0 in block <wrapper>.
+WARNING:Xst:1293 - FF/Latch  <i_2> has a constant value of 0 in block <wrapper>.
+WARNING:Xst:2677 - Node <n_4> of sequential type is unconnected in block <wrapper>.
+WARNING:Xst:2677 - Node <n_5> of sequential type is unconnected in block <wrapper>.
+WARNING:Xst:2677 - Node <n_6> of sequential type is unconnected in block <wrapper>.
+WARNING:Xst:2677 - Node <n_7> of sequential type is unconnected in block <wrapper>.
+WARNING:Xst:2677 - Node <n_8> of sequential type is unconnected in block <wrapper>.
+WARNING:Xst:2677 - Node <n_9> of sequential type is unconnected in block <wrapper>.
+WARNING:Xst:2677 - Node <n_10> of sequential type is unconnected in block <wrapper>.
+WARNING:Xst:2677 - Node <n_11> of sequential type is unconnected in block <wrapper>.
+WARNING:Xst:2677 - Node <n_12> of sequential type is unconnected in block <wrapper>.
+WARNING:Xst:2677 - Node <n_13> of sequential type is unconnected in block <wrapper>.
+WARNING:Xst:2677 - Node <n_14> of sequential type is unconnected in block <wrapper>.
+WARNING:Xst:2677 - Node <n_15> of sequential type is unconnected in block <wrapper>.
+WARNING:Xst:2677 - Node <n_16> of sequential type is unconnected in block <wrapper>.
+WARNING:Xst:2677 - Node <n_17> of sequential type is unconnected in block <wrapper>.
+WARNING:Xst:2677 - Node <n_18> of sequential type is unconnected in block <wrapper>.
+WARNING:Xst:2677 - Node <n_19> of sequential type is unconnected in block <wrapper>.
+WARNING:Xst:2677 - Node <n_20> of sequential type is unconnected in block <wrapper>.
+WARNING:Xst:2677 - Node <n_21> of sequential type is unconnected in block <wrapper>.
+WARNING:Xst:2677 - Node <n_22> of sequential type is unconnected in block <wrapper>.
+WARNING:Xst:2677 - Node <n_23> of sequential type is unconnected in block <wrapper>.
+WARNING:Xst:2677 - Node <n_24> of sequential type is unconnected in block <wrapper>.
+WARNING:Xst:2677 - Node <n_25> of sequential type is unconnected in block <wrapper>.
+WARNING:Xst:2677 - Node <n_26> of sequential type is unconnected in block <wrapper>.
+WARNING:Xst:2677 - Node <n_27> of sequential type is unconnected in block <wrapper>.
+WARNING:Xst:2677 - Node <n_28> of sequential type is unconnected in block <wrapper>.
+WARNING:Xst:2677 - Node <n_29> of sequential type is unconnected in block <wrapper>.
+WARNING:Xst:2677 - Node <n_30> of sequential type is unconnected in block <wrapper>.
+WARNING:Xst:2677 - Node <n_31> of sequential type is unconnected in block <wrapper>.
+WARNING:Xst:1293 - FF/Latch  <c_2> has a constant value of 0 in block <wrapper>.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch  <c_1> has a constant value of 0 in block <wrapper>.
+
+Optimizing unit <wrapper> ...
+WARNING:Xst:1293 - FF/Latch  <c_0> has a constant value of 1 in block <wrapper>.
+
+Optimizing unit <debounce_modified> ...
+
+Optimizing unit <bitonic_sort> ...
+
+Optimizing unit <mod_m_counter> ...
+
+Optimizing unit <uart_rx> ...
+
+Optimizing unit <fifo> ...
+
+Optimizing unit <uart_tx> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block wrapper, actual ratio is 38.
+FlipFlop outState_3 has been replicated 2 time(s)
+FlipFlop uart_unit/fifo_rx_unit/r_ptr_reg_0 has been replicated 1 time(s)
+FlipFlop uart_unit/fifo_tx_unit/r_ptr_reg_0 has been replicated 1 time(s)
+FlipFlop reading has been replicated 1 time(s) to handle iob=true attribute.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 2831
+ Flip-Flops                                            : 2831
+
+=========================================================================
+
+=========================================================================
+*                          Partition Report                             *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : wrapper.ngr
+Top Level Output File Name         : wrapper
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : NO
+
+Design Statistics
+# IOs                              : 9
+
+Cell Usage :
+# BELS                             : 13672
+#      GND                         : 1
+#      INV                         : 31
+#      LUT1                        : 93
+#      LUT2                        : 313
+#      LUT2_D                      : 8
+#      LUT3                        : 5815
+#      LUT3_D                      : 29
+#      LUT3_L                      : 1
+#      LUT4                        : 3329
+#      LUT4_D                      : 37
+#      LUT4_L                      : 147
+#      MUXCY                       : 2740
+#      MUXF5                       : 546
+#      MUXF6                       : 256
+#      MUXF7                       : 128
+#      MUXF8                       : 64
+#      VCC                         : 1
+#      XORCY                       : 133
+# FlipFlops/Latches                : 2831
+#      FDC                         : 87
+#      FDC_1                       : 32
+#      FDCE                        : 2666
+#      FDCE_1                      : 40
+#      FDP                         : 3
+#      FDP_1                       : 2
+#      FDPE                        : 1
+# Clock Buffers                    : 3
+#      BUFG                        : 1
+#      BUFGP                       : 2
+# IO Buffers                       : 7
+#      IBUF                        : 2
+#      OBUF                        : 5
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 2vp30ff896-6 
+
+ Number of Slices:                    5308  out of  13696    38%  
+ Number of Slice Flip Flops:          2830  out of  27392    10%  
+ Number of 4 input LUTs:              9803  out of  27392    35%  
+ Number of IOs:                          9
+ Number of bonded IOBs:                  9  out of    556     1%  
+    IOB Flip Flops:                      1
+ Number of GCLKs:                        3  out of     16    18%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+go                                 | BUFGP                  | 2     |
+clk                                | BUFGP                  | 2251  |
+rx_db1(rx_db_unit/db_tick1:O)      | BUFG(*)(nums_13_30)    | 578   |
+-----------------------------------+------------------------+-------+
+(*) This 1 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------+---------------------------------------------+-------+
+Control Signal                     | Buffer(FF name)                             | Load  |
+-----------------------------------+---------------------------------------------+-------+
+reset1_INV_0_5(reset1_INV_0_5:O)   | NONE(reading_1)                             | 473   |
+reset1_INV_0_4(reset1_INV_0_4:O)   | NONE(uart_unit/fifo_rx_unit/array_reg_35_1) | 471   |
+reset1_INV_0_2(reset1_INV_0_2:O)   | NONE(uart_unit/fifo_tx_unit/array_reg_23_0) | 471   |
+reset1_INV_0_3(reset1_INV_0_3:O)   | NONE(uart_unit/fifo_tx_unit/array_reg_113_4)| 472   |
+reset1_INV_0_1(reset1_INV_0_1:O)   | NONE(uart_unit/fifo_tx_unit/array_reg_61_7) | 472   |
+reset(reset1_INV_0:O)              | NONE(itr_1)                                 | 472   |
+-----------------------------------+---------------------------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -6
+
+   Minimum period: 8.858ns (Maximum Frequency: 112.896MHz)
+   Minimum input arrival time before clock: 3.378ns
+   Maximum output required time after clock: 3.670ns
+   Maximum combinational path delay: 4.273ns
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 8.002ns (frequency: 124.969MHz)
+  Total number of paths / destination ports: 62290 / 4378
+-------------------------------------------------------------------------
+Delay:               4.001ns (Levels of Logic = 3)
+  Source:            tx_en (FF)
+  Destination:       uart_unit/fifo_tx_unit/array_reg_124_7 (FF)
+  Source Clock:      clk falling
+  Destination Clock: clk rising
+
+  Data Path: tx_en to uart_unit/fifo_tx_unit/array_reg_124_7
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC_1:C->Q           14   0.374   0.699  tx_en (tx_en)
+     LUT4_D:I3->O          3   0.313   0.495  uart_unit/fifo_tx_unit/array_reg_64_and000081 (uart_unit/fifo_tx_unit/array_reg_64_and0000_bdd8)
+     LUT3_D:I2->O          7   0.313   0.597  uart_unit/fifo_tx_unit/array_reg_66_and000051 (uart_unit/fifo_tx_unit/array_reg_66_and0000_bdd4)
+     LUT4:I3->O            8   0.313   0.562  uart_unit/fifo_tx_unit/array_reg_90_and000011 (uart_unit/fifo_tx_unit/array_reg_90_and0000)
+     FDCE:CE                   0.335          uart_unit/fifo_tx_unit/array_reg_90_0
+    ----------------------------------------
+    Total                      4.001ns (1.648ns logic, 2.353ns route)
+                                       (41.2% logic, 58.8% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'rx_db1'
+  Clock period: 8.858ns (frequency: 112.896MHz)
+  Total number of paths / destination ports: 283924 / 1097
+-------------------------------------------------------------------------
+Delay:               8.858ns (Levels of Logic = 32)
+  Source:            i_3 (FF)
+  Destination:       nums_10_0 (FF)
+  Source Clock:      rx_db1 rising
+  Destination Clock: rx_db1 rising
+
+  Data Path: i_3 to nums_10_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q            17   0.374   0.691  i_3 (i_3)
+     INV:I->O              1   0.313   0.000  Madd_nums_10_add0000_lut<3>_INV_0 (N38)
+     MUXCY:S->O            1   0.377   0.000  Madd_nums_10_add0000_cy<3> (Madd_nums_10_add0000_cy<3>)
+     MUXCY:CI->O           1   0.042   0.000  Madd_nums_10_add0000_cy<4> (Madd_nums_10_add0000_cy<4>)
+     MUXCY:CI->O           1   0.042   0.000  Madd_nums_10_add0000_cy<5> (Madd_nums_10_add0000_cy<5>)
+     MUXCY:CI->O           1   0.042   0.000  Madd_nums_10_add0000_cy<6> (Madd_nums_10_add0000_cy<6>)
+     MUXCY:CI->O           1   0.042   0.000  Madd_nums_10_add0000_cy<7> (Madd_nums_10_add0000_cy<7>)
+     MUXCY:CI->O           1   0.042   0.000  Madd_nums_10_add0000_cy<8> (Madd_nums_10_add0000_cy<8>)
+     MUXCY:CI->O           1   0.042   0.000  Madd_nums_10_add0000_cy<9> (Madd_nums_10_add0000_cy<9>)
+     MUXCY:CI->O           1   0.042   0.000  Madd_nums_10_add0000_cy<10> (Madd_nums_10_add0000_cy<10>)
+     MUXCY:CI->O           1   0.042   0.000  Madd_nums_10_add0000_cy<11> (Madd_nums_10_add0000_cy<11>)
+     MUXCY:CI->O           1   0.042   0.000  Madd_nums_10_add0000_cy<12> (Madd_nums_10_add0000_cy<12>)
+     MUXCY:CI->O           1   0.042   0.000  Madd_nums_10_add0000_cy<13> (Madd_nums_10_add0000_cy<13>)
+     MUXCY:CI->O           1   0.042   0.000  Madd_nums_10_add0000_cy<14> (Madd_nums_10_add0000_cy<14>)
+     MUXCY:CI->O           1   0.042   0.000  Madd_nums_10_add0000_cy<15> (Madd_nums_10_add0000_cy<15>)
+     MUXCY:CI->O           1   0.042   0.000  Madd_nums_10_add0000_cy<16> (Madd_nums_10_add0000_cy<16>)
+     MUXCY:CI->O           1   0.042   0.000  Madd_nums_10_add0000_cy<17> (Madd_nums_10_add0000_cy<17>)
+     MUXCY:CI->O           1   0.042   0.000  Madd_nums_10_add0000_cy<18> (Madd_nums_10_add0000_cy<18>)
+     MUXCY:CI->O           1   0.042   0.000  Madd_nums_10_add0000_cy<19> (Madd_nums_10_add0000_cy<19>)
+     MUXCY:CI->O           1   0.042   0.000  Madd_nums_10_add0000_cy<20> (Madd_nums_10_add0000_cy<20>)
+     MUXCY:CI->O           1   0.042   0.000  Madd_nums_10_add0000_cy<21> (Madd_nums_10_add0000_cy<21>)
+     MUXCY:CI->O           1   0.042   0.000  Madd_nums_10_add0000_cy<22> (Madd_nums_10_add0000_cy<22>)
+     MUXCY:CI->O           1   0.042   0.000  Madd_nums_10_add0000_cy<23> (Madd_nums_10_add0000_cy<23>)
+     MUXCY:CI->O           1   0.042   0.000  Madd_nums_10_add0000_cy<24> (Madd_nums_10_add0000_cy<24>)
+     MUXCY:CI->O           1   0.042   0.000  Madd_nums_10_add0000_cy<25> (Madd_nums_10_add0000_cy<25>)
+     MUXCY:CI->O           1   0.042   0.000  Madd_nums_10_add0000_cy<26> (Madd_nums_10_add0000_cy<26>)
+     MUXCY:CI->O           1   0.042   0.000  Madd_nums_10_add0000_cy<27> (Madd_nums_10_add0000_cy<27>)
+     XORCY:CI->O           2   0.868   0.495  Madd_nums_10_add0000_xor<28> (nums_10_add0000<28>)
+     LUT4:I3->O            1   0.313   0.000  Mcompar_i_cmp_gt0000_lut<5> (N47)
+     MUXCY:S->O            3   0.860   0.517  Mcompar_i_cmp_gt0000_cy<5> (Mcompar_i_cmp_gt0000_cy<5>)
+     LUT4_D:I3->O          3   0.313   0.495  Mcompar_i_cmp_gt0000_cy<7>1_1 (Mcompar_i_cmp_gt0000_cy<7>1)
+     LUT4_D:I2->O          3   0.313   0.495  nums_11_and000041 (nums_11_and0000_bdd2)
+     LUT3:I2->O           32   0.313   0.790  nums_15_and000011 (nums_15_and0000)
+     FDCE:CE                   0.335          nums_15_0
+    ----------------------------------------
+    Total                      8.858ns (5.375ns logic, 3.483ns route)
+                                       (60.7% logic, 39.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 6 / 6
+-------------------------------------------------------------------------
+Offset:              3.378ns (Levels of Logic = 4)
+  Source:            rx (PAD)
+  Destination:       uart_unit/uart_rx_unit/s_reg_3 (FF)
+  Destination Clock: clk rising
+
+  Data Path: rx to uart_unit/uart_rx_unit/s_reg_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             5   0.919   0.553  rx_IBUF (rx_IBUF)
+     LUT4:I3->O            3   0.313   0.517  uart_unit/uart_rx_unit/s_reg_mux0000<3>15 (uart_unit/uart_rx_unit/N15)
+     LUT4_L:I3->LO         1   0.313   0.216  uart_unit/uart_rx_unit/s_reg_mux0000<1>_SW1 (N4727)
+     LUT4:I1->O            1   0.313   0.000  uart_unit/uart_rx_unit/s_reg_mux0000<1> (uart_unit/uart_rx_unit/s_reg_mux0000<1>)
+     FDC:D                     0.234          uart_unit/uart_rx_unit/s_reg_2
+    ----------------------------------------
+    Total                      3.378ns (2.092ns logic, 1.286ns route)
+                                       (61.9% logic, 38.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 2 / 2
+-------------------------------------------------------------------------
+Offset:              3.670ns (Levels of Logic = 1)
+  Source:            uart_unit/uart_tx_unit/tx_reg (FF)
+  Destination:       tx (PAD)
+  Source Clock:      clk rising
+
+  Data Path: uart_unit/uart_tx_unit/tx_reg to tx
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDP:C->Q              2   0.374   0.445  uart_unit/uart_tx_unit/tx_reg (uart_unit/uart_tx_unit/tx_reg)
+     OBUF:I->O                 2.851          led_3_OBUF (led<3>)
+    ----------------------------------------
+    Total                      3.670ns (3.225ns logic, 0.445ns route)
+                                       (87.9% logic, 12.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'go'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              3.615ns (Levels of Logic = 1)
+  Source:            reading_1 (FF)
+  Destination:       led<2> (PAD)
+  Source Clock:      go falling
+
+  Data Path: reading_1 to led<2>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDP_1:C->Q            1   0.374   0.390  reading_1 (reading_1)
+     OBUF:I->O                 2.851          led_2_OBUF (led<2>)
+    ----------------------------------------
+    Total                      3.615ns (3.225ns logic, 0.390ns route)
+                                       (89.2% logic, 10.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'rx_db1'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              3.670ns (Levels of Logic = 1)
+  Source:            led_1 (FF)
+  Destination:       led<1> (PAD)
+  Source Clock:      rx_db1 rising
+
+  Data Path: led_1 to led<1>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDPE:C->Q             2   0.374   0.445  led_1 (led_1)
+     OBUF:I->O                 2.851          led_1_OBUF (led<1>)
+    ----------------------------------------
+    Total                      3.670ns (3.225ns logic, 0.445ns route)
+                                       (87.9% logic, 12.1% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Delay:               4.273ns (Levels of Logic = 2)
+  Source:            rx (PAD)
+  Destination:       led<0> (PAD)
+
+  Data Path: rx to led<0>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             5   0.919   0.503  rx_IBUF (rx_IBUF)
+     OBUF:I->O                 2.851          led_0_OBUF (led<0>)
+    ----------------------------------------
+    Total                      4.273ns (3.770ns logic, 0.503ns route)
+                                       (88.2% logic, 11.8% route)
+
+=========================================================================
+CPU : 117.89 / 118.16 s | Elapsed : 118.00 / 118.00 s
+ 
+--> 
+
+Total memory usage is 316196 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   53 (   0 filtered)
+Number of infos    :    6 (   0 filtered)
+

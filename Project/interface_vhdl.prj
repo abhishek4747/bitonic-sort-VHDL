@@ -1,0 +1,8 @@
+vhdl work "\\vboxsvr\rojec\try1\try1.vhd"
+vhdl work "\\vboxsvr\rojec\try1\list6_uart_tx.vhd"
+vhdl work "\\vboxsvr\rojec\try1\list4_uart_rx.vhd"
+vhdl work "\\vboxsvr\rojec\try1\list2_fifo.vhd"
+vhdl work "\\vboxsvr\rojec\try1\list1_mod_m.vhd"
+vhdl work "\\vboxsvr\rojec\try1\list7_uart.vhd"
+vhdl work "\\vboxsvr\rojec\try1\debounce_modified.vhd"
+vhdl work "\\vboxsvr\rojec\try1\interface.vhd"

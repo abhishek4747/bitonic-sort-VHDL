@@ -1,0 +1,37 @@
+xst -ise "X:/try1/try1.ise" -intstyle ise -ifn uart_test1.xst -ofn uart_test1.syr
+ngdbuild -ise "X:/try1/try1.ise" -intstyle ise -dd _ngo -nt timestamp -uc "uart_test1.ucf" -p xc2vp30-ff896-6 "uart_test1.ngc" uart_test1.ngd
+map -ise "X:/try1/try1.ise" -intstyle ise -p xc2vp30-ff896-6 -cm area -pr b -k 4 -c 100 -tx off -o uart_test1_map.ncd uart_test1.ngd uart_test1.pcf
+par -ise "X:/try1/try1.ise" -w -intstyle ise -ol std -t 1 uart_test1_map.ncd uart_test1.ncd uart_test1.pcf
+trce -ise "X:/try1/try1.ise" -intstyle ise -e 3 -s 6 -xml uart_test1 uart_test1.ncd -o uart_test1.twr uart_test1.pcf -ucf uart_test1.ucf
+bitgen -ise "X:/try1/try1.ise" -intstyle ise -f uart_test1.ut uart_test1.ncd
+xst -ise "X:/try1/try1.ise" -intstyle ise -ifn uart_test1.xst -ofn uart_test1.syr
+ngdbuild -ise "X:/try1/try1.ise" -intstyle ise -dd _ngo -nt timestamp -uc "uart_test1.ucf" -p xc2vp30-ff896-6 "uart_test1.ngc" uart_test1.ngd
+xst -ise "X:/try1/try1.ise" -intstyle ise -ifn uart_test1.xst -ofn uart_test1.syr
+ngdbuild -ise "X:/try1/try1.ise" -intstyle ise -dd _ngo -nt timestamp -uc "uart_test1.ucf" -p xc2vp30-ff896-6 "uart_test1.ngc" uart_test1.ngd
+map -ise "X:/try1/try1.ise" -intstyle ise -p xc2vp30-ff896-6 -cm area -pr b -k 4 -c 100 -tx off -o uart_test1_map.ncd uart_test1.ngd uart_test1.pcf
+par -ise "X:/try1/try1.ise" -w -intstyle ise -ol std -t 1 uart_test1_map.ncd uart_test1.ncd uart_test1.pcf
+trce -ise "X:/try1/try1.ise" -intstyle ise -e 3 -s 6 -xml uart_test1 uart_test1.ncd -o uart_test1.twr uart_test1.pcf -ucf uart_test1.ucf
+bitgen -ise "X:/try1/try1.ise" -intstyle ise -f uart_test1.ut uart_test1.ncd
+xst -ise "X:/try1/try1.ise" -intstyle ise -ifn uart_test1.xst -ofn uart_test1.syr
+ngdbuild -ise "X:/try1/try1.ise" -intstyle ise -dd _ngo -nt timestamp -uc "uart_test1.ucf" -p xc2vp30-ff896-6 "uart_test1.ngc" uart_test1.ngd
+map -ise "X:/try1/try1.ise" -intstyle ise -p xc2vp30-ff896-6 -cm area -pr b -k 4 -c 100 -tx off -o uart_test1_map.ncd uart_test1.ngd uart_test1.pcf
+par -ise "X:/try1/try1.ise" -w -intstyle ise -ol std -t 1 uart_test1_map.ncd uart_test1.ncd uart_test1.pcf
+trce -ise "X:/try1/try1.ise" -intstyle ise -e 3 -s 6 -xml uart_test1 uart_test1.ncd -o uart_test1.twr uart_test1.pcf -ucf uart_test1.ucf
+bitgen -ise "X:/try1/try1.ise" -intstyle ise -f uart_test1.ut uart_test1.ncd
+xst -ise "X:/try1/try1.ise" -intstyle ise -ifn uart_test1.xst -ofn uart_test1.syr
+ngdbuild -ise "X:/try1/try1.ise" -intstyle ise -dd _ngo -nt timestamp -uc "uart_test1.ucf" -p xc2vp30-ff896-6 "uart_test1.ngc" uart_test1.ngd
+map -ise "X:/try1/try1.ise" -intstyle ise -p xc2vp30-ff896-6 -cm area -pr b -k 4 -c 100 -tx off -o uart_test1_map.ncd uart_test1.ngd uart_test1.pcf
+par -ise "X:/try1/try1.ise" -w -intstyle ise -ol std -t 1 uart_test1_map.ncd uart_test1.ncd uart_test1.pcf
+trce -ise "X:/try1/try1.ise" -intstyle ise -e 3 -s 6 -xml uart_test1 uart_test1.ncd -o uart_test1.twr uart_test1.pcf -ucf uart_test1.ucf
+bitgen -ise "X:/try1/try1.ise" -intstyle ise -f uart_test1.ut uart_test1.ncd
+xst -ise "X:/try1/try1.ise" -intstyle ise -ifn uart_test1.xst -ofn uart_test1.syr
+ngdbuild -ise "X:/try1/try1.ise" -intstyle ise -dd _ngo -nt timestamp -uc "uart_test1.ucf" -p xc2vp30-ff896-6 "uart_test1.ngc" uart_test1.ngd
+xst -ise "X:/try1/try1.ise" -intstyle ise -ifn uart_test1.xst -ofn uart_test1.syr
+xst -ise "X:/try1/try1.ise" -intstyle ise -ifn uart_test1.xst -ofn uart_test1.syr
+xst -ise "X:/try1/try1.ise" -intstyle ise -ifn uart_test1.xst -ofn uart_test1.syr
+xst -ise "X:/try1/try1.ise" -intstyle ise -ifn uart_test1.xst -ofn uart_test1.syr
+ngdbuild -ise "X:/try1/try1.ise" -intstyle ise -dd _ngo -nt timestamp -uc "uart_test1.ucf" -p xc2vp30-ff896-6 "uart_test1.ngc" uart_test1.ngd
+map -ise "X:/try1/try1.ise" -intstyle ise -p xc2vp30-ff896-6 -cm area -pr b -k 4 -c 100 -tx off -o uart_test1_map.ncd uart_test1.ngd uart_test1.pcf
+par -ise "X:/try1/try1.ise" -w -intstyle ise -ol std -t 1 uart_test1_map.ncd uart_test1.ncd uart_test1.pcf
+trce -ise "X:/try1/try1.ise" -intstyle ise -e 3 -s 6 -xml uart_test1 uart_test1.ncd -o uart_test1.twr uart_test1.pcf -ucf uart_test1.ucf
+bitgen -ise "X:/try1/try1.ise" -intstyle ise -f uart_test1.ut uart_test1.ncd

@@ -1,0 +1,6 @@
+add instance uart 1504 976 R0 -sn=1
+select figure at 1630 1515 24 -branches -sn=1
+select figure at 1624 1509 24 -branches -sn=1
+delete selection -sn=1
+select figure at 1691 630 24 -branches -sn=1
+select figure at 1685 624 24 -branches -sn=1

@@ -1,0 +1,21 @@
+NET "go" LOC = "AG5"; 
+NET "clk" LOC = "AJ15"; 
+NET "resetNot" LOC = "AG3"; 
+NET "rx" LOC = "AJ8"; 
+NET "tx" LOC = "AE7"; 
+
+NET "go" IOSTANDARD = LVTTL;
+NET "clk" IOSTANDARD = LVTTL;
+NET "resetNot" IOSTANDARD = LVTTL;
+NET "rx" IOSTANDARD = LVTTL;
+NET "tx" IOSTANDARD = LVTTL;
+
+NET "led(0)" LOC = "AC4";
+NET "led(1)" LOC = "AC3";
+NET "led(2)" LOC = "AA6";
+NET "led(3)" LOC = "AA5";
+
+NET "led(0)" IOSTANDARD = LVTTL;
+NET "led(1)" IOSTANDARD = LVTTL;
+NET "led(2)" IOSTANDARD = LVTTL;
+NET "led(3)" IOSTANDARD = LVTTL;

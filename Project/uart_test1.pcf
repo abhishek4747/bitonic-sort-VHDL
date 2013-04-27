@@ -1,0 +1,16 @@
+//! **************************************************************************
+// Written by: Map J.36 on Fri Apr 26 15:01:29 2013
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "led<0>" LOCATE = SITE "AC4" LEVEL 1;
+COMP "led<1>" LOCATE = SITE "AC3" LEVEL 1;
+COMP "led<2>" LOCATE = SITE "AA6" LEVEL 1;
+COMP "clk" LOCATE = SITE "AJ15" LEVEL 1;
+COMP "led<3>" LOCATE = SITE "AA5" LEVEL 1;
+COMP "btn" LOCATE = SITE "AG5" LEVEL 1;
+COMP "rx" LOCATE = SITE "AJ8" LEVEL 1;
+COMP "tx" LOCATE = SITE "AE7" LEVEL 1;
+COMP "reset" LOCATE = SITE "AG3" LEVEL 1;
+NET "clk_BUFGP/IBUFG" BEL "clk_BUFGP/BUFG.GCLKMUX" USELOCALCONNECT;
+SCHEMATIC END;

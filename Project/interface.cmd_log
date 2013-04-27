@@ -1,0 +1,51 @@
+xst -ise "E:/try1/try1.ise" -intstyle ise -ifn interface.xst -ofn interface.syr
+xst -ise "X:/try1/try1.ise" -intstyle ise -ifn interface.xst -ofn interface.syr
+xst -ise "X:/try1/try1.ise" -intstyle ise -ifn interface.xst -ofn interface.syr
+xst -ise "X:/try1/try1.ise" -intstyle ise -ifn interface.xst -ofn interface.syr
+xst -ise "X:/try1/try1.ise" -intstyle ise -ifn interface.xst -ofn interface.syr
+xst -ise "X:/try1/try1.ise" -intstyle ise -ifn interface.xst -ofn interface.syr
+xst -ise "X:/try1/try1.ise" -intstyle ise -ifn interface.xst -ofn interface.syr
+xst -ise "X:/try1/try1.ise" -intstyle ise -ifn interface.xst -ofn interface.syr
+ngdbuild -ise "X:/try1/try1.ise" -intstyle ise -dd _ngo -nt timestamp -uc "uart_test1.ucf" -p xc2vp30-ff896-6 "interface.ngc" interface.ngd
+map -ise "X:/try1/try1.ise" -intstyle ise -p xc2vp30-ff896-6 -cm area -pr b -k 4 -c 100 -tx off -o interface_map.ncd interface.ngd interface.pcf
+par -ise "X:/try1/try1.ise" -w -intstyle ise -ol std -t 1 interface_map.ncd interface.ncd interface.pcf
+trce -ise "X:/try1/try1.ise" -intstyle ise -e 3 -s 6 -xml interface interface.ncd -o interface.twr interface.pcf -ucf uart_test1.ucf
+bitgen -ise "X:/try1/try1.ise" -intstyle ise -f interface.ut interface.ncd
+xst -ise "X:/try1/try1.ise" -intstyle ise -ifn interface.xst -ofn interface.syr
+ngdbuild -ise "X:/try1/try1.ise" -intstyle ise -dd _ngo -nt timestamp -uc "uart_test1.ucf" -p xc2vp30-ff896-6 "interface.ngc" interface.ngd
+map -ise "X:/try1/try1.ise" -intstyle ise -p xc2vp30-ff896-6 -cm area -pr b -k 4 -c 100 -tx off -o interface_map.ncd interface.ngd interface.pcf
+par -ise "X:/try1/try1.ise" -w -intstyle ise -ol std -t 1 interface_map.ncd interface.ncd interface.pcf
+trce -ise "X:/try1/try1.ise" -intstyle ise -e 3 -s 6 -xml interface interface.ncd -o interface.twr interface.pcf -ucf uart_test1.ucf
+bitgen -ise "X:/try1/try1.ise" -intstyle ise -f interface.ut interface.ncd
+xst -ise "X:/try1/try1.ise" -intstyle ise -ifn interface.xst -ofn interface.syr
+ngdbuild -ise "X:/try1/try1.ise" -intstyle ise -dd _ngo -nt timestamp -uc "uart_test1.ucf" -p xc2vp30-ff896-6 "interface.ngc" interface.ngd
+map -ise "X:/try1/try1.ise" -intstyle ise -p xc2vp30-ff896-6 -cm area -pr b -k 4 -c 100 -tx off -o interface_map.ncd interface.ngd interface.pcf
+par -ise "X:/try1/try1.ise" -w -intstyle ise -ol std -t 1 interface_map.ncd interface.ncd interface.pcf
+trce -ise "X:/try1/try1.ise" -intstyle ise -e 3 -s 6 -xml interface interface.ncd -o interface.twr interface.pcf -ucf uart_test1.ucf
+bitgen -ise "X:/try1/try1.ise" -intstyle ise -f interface.ut interface.ncd
+xst -ise "X:/try1/try1.ise" -intstyle ise -ifn interface.xst -ofn interface.syr
+ngdbuild -ise "X:/try1/try1.ise" -intstyle ise -dd _ngo -nt timestamp -uc "uart_test1.ucf" -p xc2vp30-ff896-6 "interface.ngc" interface.ngd
+map -ise "X:/try1/try1.ise" -intstyle ise -p xc2vp30-ff896-6 -cm area -pr b -k 4 -c 100 -tx off -o interface_map.ncd interface.ngd interface.pcf
+par -ise "X:/try1/try1.ise" -w -intstyle ise -ol std -t 1 interface_map.ncd interface.ncd interface.pcf
+trce -ise "X:/try1/try1.ise" -intstyle ise -e 3 -s 6 -xml interface interface.ncd -o interface.twr interface.pcf -ucf uart_test1.ucf
+bitgen -ise "X:/try1/try1.ise" -intstyle ise -f interface.ut interface.ncd
+xst -ise "X:/try1/try1.ise" -intstyle ise -ifn interface.xst -ofn interface.syr
+xst -ise "X:/try1/try1.ise" -intstyle ise -ifn interface.xst -ofn interface.syr
+xst -ise "X:/try1/try1.ise" -intstyle ise -ifn interface.xst -ofn interface.syr
+ngdbuild -ise "X:/try1/try1.ise" -intstyle ise -dd _ngo -nt timestamp -uc "uart_test1.ucf" -p xc2vp30-ff896-6 "interface.ngc" interface.ngd
+map -ise "X:/try1/try1.ise" -intstyle ise -p xc2vp30-ff896-6 -cm area -pr b -k 4 -c 100 -tx off -o interface_map.ncd interface.ngd interface.pcf
+par -ise "X:/try1/try1.ise" -w -intstyle ise -ol std -t 1 interface_map.ncd interface.ncd interface.pcf
+trce -ise "X:/try1/try1.ise" -intstyle ise -e 3 -s 6 -xml interface interface.ncd -o interface.twr interface.pcf -ucf uart_test1.ucf
+bitgen -ise "X:/try1/try1.ise" -intstyle ise -f interface.ut interface.ncd
+xst -ise "X:/try1/try1.ise" -intstyle ise -ifn interface.xst -ofn interface.syr
+ngdbuild -ise "X:/try1/try1.ise" -intstyle ise -dd _ngo -nt timestamp -uc "uart_test1.ucf" -p xc2vp30-ff896-6 "interface.ngc" interface.ngd
+map -ise "X:/try1/try1.ise" -intstyle ise -p xc2vp30-ff896-6 -cm area -pr b -k 4 -c 100 -tx off -o interface_map.ncd interface.ngd interface.pcf
+par -ise "X:/try1/try1.ise" -w -intstyle ise -ol std -t 1 interface_map.ncd interface.ncd interface.pcf
+trce -ise "X:/try1/try1.ise" -intstyle ise -e 3 -s 6 -xml interface interface.ncd -o interface.twr interface.pcf -ucf uart_test1.ucf
+bitgen -ise "X:/try1/try1.ise" -intstyle ise -f interface.ut interface.ncd
+xst -ise "X:/try1/try1.ise" -intstyle ise -ifn interface.xst -ofn interface.syr
+ngdbuild -ise "X:/try1/try1.ise" -intstyle ise -dd _ngo -nt timestamp -uc "uart_test1.ucf" -p xc2vp30-ff896-6 "interface.ngc" interface.ngd
+map -ise "X:/try1/try1.ise" -intstyle ise -p xc2vp30-ff896-6 -cm area -pr b -k 4 -c 100 -tx off -o interface_map.ncd interface.ngd interface.pcf
+par -ise "X:/try1/try1.ise" -w -intstyle ise -ol std -t 1 interface_map.ncd interface.ncd interface.pcf
+trce -ise "X:/try1/try1.ise" -intstyle ise -e 3 -s 6 -xml interface interface.ncd -o interface.twr interface.pcf -ucf uart_test1.ucf
+bitgen -ise "X:/try1/try1.ise" -intstyle ise -f interface.ut interface.ncd

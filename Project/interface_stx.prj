@@ -1,0 +1,8 @@
+vhdl isim_temp "list6_uart_tx.vhd"
+vhdl isim_temp "list4_uart_rx.vhd"
+vhdl isim_temp "list2_fifo.vhd"
+vhdl isim_temp "list1_mod_m.vhd"
+vhdl isim_temp "try1.vhd"
+vhdl isim_temp "list7_uart.vhd"
+vhdl isim_temp "debounce_modified.vhd"
+vhdl isim_temp "interface.vhd"

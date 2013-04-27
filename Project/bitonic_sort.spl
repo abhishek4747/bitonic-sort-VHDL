@@ -1,0 +1,5 @@
+[Inputs]
+=input[15:0]=
+[Outputs]
+=output[15:0]=
+[BiDir]

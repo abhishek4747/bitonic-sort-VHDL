@@ -1,0 +1,55 @@
+## PINOUT AND IO DRIVE CHARACTERISTICS FOR THE MGT
+## PORTS OF THE XUP-V2PRO DEVELOPMENT SYSTEM
+## REVISION C PRINTED CIRCUIT BOARD DEC 8 2004
+
+###############################################################
+# SATA 0 Host
+###############################################################
+# MGT TX/RX pads are not directly specified in the UCF file.
+# Rather, the MGT itself is placed and the tools automatically 
+# connect the appropriate pads.
+INST "hierarchical_path_to_mgt" LOC=GT_X0Y1;  # SATA 0 HOST
+# In addition, constrain location of the registers in the MGT Phase 
+# Align Module. This insures correct timing with respect to the MGT's 
+# enable comma align signal.
+# See the RocketIO Transceiver User Guide for more info
+# SATA 0 HOST   (GT_X0Y1):
+INST "hierarchical_path_to_align_logic" AREA_GROUP="PHASE_ALIGN_0_GRP";
+AREA_GROUP "PHASE_ALIGN_0_GRP" RANGE=SLICE_X14Y152:SLICE_X15Y153;  
+NET "SATA_PORT0_IDLE" LOC = "B15";
+NET "SATA_PORT0_IDLE" IOSTANDARD = LVTTL;
+NET "SATA_PORT0_IDLE" SLEW = FAST;
+
+###############################################################
+# SATA 1 Target
+###############################################################
+INST "hierarchical_path_to_mgt" LOC=GT_X1Y1;  # SATA 1 TARGET
+# SATA 1 TARGET (GT_X1Y1):
+INST "hierarchical_path_to_align_logic" AREA_GROUP="PHASE_ALIGN_1_GRP";
+AREA_GROUP "PHASE_ALIGN_1_GRP" RANGE=SLICE_X38Y152:SLICE_X39Y153;  
+NET "SATA_PORT1_IDLE" LOC = "AK3";
+NET "SATA_PORT1_IDLE" IOSTANDARD = LVTTL;
+NET "SATA_PORT1_IDLE" SLEW = FAST;
+
+###############################################################
+# SATA 2 Host
+###############################################################
+INST "hierarchical_path_to_mgt" LOC=GT_X2Y1;  # SATA 2 HOST
+# SATA 2 HOST   (GT_X2Y1):
+INST "hierarchical_path_to_align_logic" AREA_GROUP="PHASE_ALIGN_2_GRP";
+AREA_GROUP "PHASE_ALIGN_2_GRP" RANGE=SLICE_X50Y152:SLICE_X51Y153;  
+NET "SATA_PORT2_IDLE" LOC = "C15";
+NET "SATA_PORT2_IDLE" IOSTANDARD = LVTTL;
+NET "SATA_PORT2_IDLE" SLEW = FAST;
+
+###############################################################
+# SMA MGT
+###############################################################
+INST "hierarchical_path_to_mgt" LOC=GT_X3Y1;  # SMA MGT
+# SMA MGT       (GT_X3Y1):
+INST "hierarchical_path_to_align_logic" AREA_GROUP="PHASE_ALIGN_3_GRP";
+AREA_GROUP "PHASE_ALIGN_3_GRP" RANGE=SLICE_X74Y152:SLICE_X75Y153;  
+
+
+
+

@@ -1,0 +1,35 @@
+ command line:
+   ./btest_vhd_isim_beh.exe
+     -intstyle  ise
+     -ipchost  localhost
+     -ipcport  1761
+
+Fri Apr 26 22:00:01 2013
+
+Total Line Count : 48
+
+ Elaboration time : 0 sec.
+
+ Estimate current memory usage : 116.453 Meg. 
+
+ Total Signals          : 4
+ Total Nets             : 32
+ Total Signal Drivers   : 2
+ Total Blocks           : 7
+ Total Primitive Blocks : 1
+ Total Processes        : 2
+ Total Traceable Variables  : 0
+ Total Scalar Nets and Variables : 32
+ntrace select -o on -n /btest_vhd/input 
+ntrace select -o on -n /btest_vhd/output 
+ntrace start 
+isimrun 1000 ns 
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+
+ Simulation time 0.050072 sec.
+
+ Estimate current memory usage : 122.745 Meg. 
+
+Fri Apr 26 22:00:29 2013
+

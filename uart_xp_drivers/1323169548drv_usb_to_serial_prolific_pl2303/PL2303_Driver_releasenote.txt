@@ -1,0 +1,99 @@
+PL-2303 Driver Setup Installer, Prolific Edition
+Setup Installer Revision Note History
+==================================================
+
+System Requirement:
+  . Supports the following Windows OSes:
+	- Windows 2000 SP4
+	- Windows XP SP2 and above (32 & 64 bit)
+	- Windows Server 2003 (32 & 64 bit)
+	- Windows Server 2008 / 2008 R2 (32 & 64 bit)
+	- Windows Vista (32 & 64 bit)
+	- Windows 7 (32 & 64 bit)
+  . USB host controller
+  . Device using PL-2303H/HX/X version chip
+ 
+
+Supported device ID and product strings:
+  . VID_067B&PID_2303 for "Prolific USB-to-Serial Comm Port"
+
+
+Driver Versions:
+-------------------
+	- Windows 2000/XP/Server2003 (32 & 64-bit) WDM WHQL Driver: v2.0.16.166
+	- Windows Vista/7/Server2008 (32 & 64-bit) WDF WHQL Driver: v3.3.17.203
+
+
+Release Notes:
+---------------
+PL2303 Driver Installer v1.4.17
+  Changes from Installer v1.3.0:
+
+   Installer & Build date: 1.4.17 (2011-5-24)
+	GUID:ECC3713C-08A4-40E3-95F1-7D0704F1CE5E
+
+   Windows 2000/XP/Server2003 Driver v2.0.16.166  
+   ----------------------------------------------
+	Driver Change from v2.0.13.130:
+	. Use different service name in INF file to avoid driver conflict with Vista/7 INF driver. 
+	      - change line in INF file to {Serial.SVCDESC = "Prolific Serial port WDMdriver"}
+	. Added 10ms delay (downstream buffer) on close COM port to fix customer MCU application. 	
+	. Added more baud rate support previously requested by customers:
+		-110bps 
+		-5787bps 
+		-256000bps
+		-56000bps
+		-2Mbps
+		-2.25Mbps
+		-3.2Mbps
+		-3333333bps
+		-4Mbps
+		-4.5Mbps
+		-5Mbps
+	 	-5333333bps
+		-6.6Mbps
+	    	-6.625Mbps
+		-8Mbps
+
+
+   Windows Vista/7/Server2008/Server2008R2 Driver Changes v3.3.17.203
+   ------------------------------------------------------------------
+	Driver Change from v3.3.11.152:
+	. Use different service name in INF file to avoid driver conflict with XP INF driver. 
+	      - change line in INF file to {Serial.SVCDESC = "Prolific Serial port WDFdriver"}
+	. Added USB Selective Suspend power saving feature requested by Notebook PC vendors. 
+	      - Chip will go to sleep mode when idle for 10 seconds and COM port not open. 
+	      - Chip will NOT go to sleep mode when COM port is OPEN.
+	. Modify "SerialUndoExternalNaming" routine.
+		- Fix COM port is not removed in registry when device is unplug and program still open. 
+		- update registry HKEY_LOCAL_MACHINE\HARDWARE\DEVICEMAP\SERIAL COMM when unplug and replug.
+	. Added support for TransmitCommChar() function.
+	. Added SpinLock function to fix customer GPS application. 
+	. Added more baud rate support previously requested by customers:
+		-110bps 
+		-5787bps 
+		-256000bps
+		-56000bps
+		-2Mbps
+		-2.25Mbps
+		-3.2Mbps
+		-3333333bps
+		-4Mbps
+		-4.5Mbps
+		-5Mbps
+	 	-5333333bps
+		-6.6Mbps
+	    	-6.625Mbps
+		-8Mbps
+
+	
+   Language Support: 
+	- English (default)
+	- Chinese (Traditional) 
+	- Chinese (Simplified)
+	- Japanese
+
+
+========================================
+Prolific Technology Inc.
+http://www.prolific.com.tw

@@ -1,0 +1,13 @@
+xst -ise "E:/Project/project.ise" -intstyle ise -ifn wrapper.xst -ofn wrapper.syr
+xst -ise "E:/Project/project.ise" -intstyle ise -ifn wrapper.xst -ofn wrapper.syr
+xst -ise "E:/Project/project.ise" -intstyle ise -ifn wrapper.xst -ofn wrapper.syr
+ngdbuild -ise "E:/Project/project.ise" -intstyle ise -dd _ngo -nt timestamp -uc "wrapper_ucf.ucf" -p xc2vp30-ff896-6 "wrapper.ngc" wrapper.ngd
+map -ise "E:/Project/project.ise" -intstyle ise -p xc2vp30-ff896-6 -cm area -pr b -k 4 -c 100 -tx off -o wrapper_map.ncd wrapper.ngd wrapper.pcf
+par -ise "E:/Project/project.ise" -w -intstyle ise -ol std -t 1 wrapper_map.ncd wrapper.ncd wrapper.pcf
+trce -ise "E:/Project/project.ise" -intstyle ise -e 3 -s 6 -xml wrapper wrapper.ncd -o wrapper.twr wrapper.pcf -ucf wrapper_ucf.ucf
+xst -ise "E:/Project/project.ise" -intstyle ise -ifn wrapper.xst -ofn wrapper.syr
+ngdbuild -ise "E:/Project/project.ise" -intstyle ise -dd _ngo -nt timestamp -uc "wrapper_ucf.ucf" -p xc2vp30-ff896-6 "wrapper.ngc" wrapper.ngd
+map -ise "E:/Project/project.ise" -intstyle ise -p xc2vp30-ff896-6 -cm area -pr b -k 4 -c 100 -tx off -o wrapper_map.ncd wrapper.ngd wrapper.pcf
+par -ise "E:/Project/project.ise" -w -intstyle ise -ol std -t 1 wrapper_map.ncd wrapper.ncd wrapper.pcf
+trce -ise "E:/Project/project.ise" -intstyle ise -e 3 -s 6 -xml wrapper wrapper.ncd -o wrapper.twr wrapper.pcf -ucf wrapper_ucf.ucf
+bitgen -ise "E:/Project/project.ise" -intstyle ise -f wrapper.ut wrapper.ncd

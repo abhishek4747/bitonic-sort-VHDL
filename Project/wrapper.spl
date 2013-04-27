@@ -1,0 +1,9 @@
+[Inputs]
+clk
+resetNot
+go
+rx
+[Outputs]
+tx
+[BiDir]
+=led[3:0]=
